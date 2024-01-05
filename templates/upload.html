@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF转Word</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='upload.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF To Word 转换器</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="pdf_file">选择PDF文件（可长按Ctrl加鼠标左键多选）:</label>
+                <input type="file" name="pdf_file" id="pdf_file" multiple>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="转换">
+            </div>
+        </form>
+    </div>
+
+    <div id="popup-modal">
+        <div id="popup-content">
+            <button onclick="hidePopup()">Close</button>
+        </div>
+    </div>
+
+    {% if files %}
+        <div class="result-container">
+            <h1>转 换 结 果</h1>
+            {% for file in files %}
+                <div class="result-link">
+                    <a href="{{ file }}" target="_blank">{{ file }}</a>
+                    <a class="download-button" href="/downloads/{{ file }}">下载</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+</body>
+</html>
