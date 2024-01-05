@@ -8,6 +8,6 @@
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/.*", "dest": "app.py" }
+    { "src": "/.*", "dest": "/api/app.py" }
   ]
 }
