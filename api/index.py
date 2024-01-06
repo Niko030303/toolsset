@@ -1,6 +1,5 @@
 import atexit
 import shutil
-
 from flask import Flask, render_template, request, send_file, abort
 import os
 from pdf_to_word_converter import convert_pdf_to_word
