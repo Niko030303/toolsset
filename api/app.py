@@ -88,5 +88,5 @@ def cleanup_folders():
     # 清空 downloads 文件夹
     shutil.rmtree(app.config['DOWNLOAD_FOLDER'])
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
